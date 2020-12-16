@@ -1,0 +1,81 @@
+// VARIABLES
+$colors: (
+  main: #188a8d,
+  main-light: lighten(#188a8d, 15%),
+  main-dark: darken(#188a8d, 15%),
+  secondary: #7abfc9,
+  secondary-dark: darken(#7abfc9, 15%),
+  dark-main: darken(#141163, 12%),
+  grey-1: #def3f6,
+  grey-2: darken(#def3f6, 15%),
+  grey-3: darken(#def3f6, 25%),
+  grey-4: transparentize(darken(#def3f6, 65%), 0.4),
+  white: white,
+  greyed-out: #4f5b68,
+  sea: #40d9ef,
+  sand: #c2b280,
+  success: #39ce77,
+  error: #fa9488,
+  gradient-red:
+    linear-gradient(135deg, rgba(255, 20, 20, 1) 0%, rgba(255, 150, 11, 1) 100%),
+  gradient-green:
+    linear-gradient(135deg, rgba(0, 184, 89, 1) 0%, rgba(148, 166, 0, 1) 100%),
+  gradient-darkblue:
+    linear-gradient(135deg, rgba(49, 27, 255, 1) 0%, rgba(1, 232, 255, 1) 100%),
+  gradient-lightblue:
+    linear-gradient(
+      135deg,
+      rgba(27, 146, 255, 1) 0%,
+      rgba(11, 208, 255, 1) 100%
+    ),
+  gradient-yellow:
+    linear-gradient(
+      135deg,
+      rgba(212, 175, 55, 1) 0%,
+      rgba(207, 181, 59, 1) 100%
+    ),
+  gradient-orange:
+    linear-gradient(135deg, rgba(255, 154, 37, 1) 0%, rgb(211, 197, 1) 100%),
+  gradient-purple:
+    linear-gradient(135deg, rgba(255, 37, 191, 1) 0%, rgba(59, 0, 255, 1) 100%),
+  gradient-black:
+    linear-gradient(135deg, rgba(0, 20, 23, 1) 0%, rgb(90, 90, 90) 100%),
+);
+
+$font-main: "Goldman", cursive;
+$font-secondary: "Ubuntu", sans-serif;
+
+$tablet: 1024px;
+$mobile: 768px;
+$vertical: 550px;
+
+// FUNCTIONS
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// MIXIN
+@mixin btn-active {
+  background: linear-gradient(
+    90deg,
+    color(secondary-dark),
+    color(secondary) 50%,
+    rgba(64, 217, 239, 0) 100%
+  );
+  transform: translateX(0.5rem);
+  border-bottom: none;
+  svg {
+    fill: color(main);
+  }
+  h2 {
+    visibility: visible !important;
+    color: color(main);
+  }
+}
+
+@mixin centralized {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

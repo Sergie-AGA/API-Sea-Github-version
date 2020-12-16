@@ -1,0 +1,380 @@
+// Navbar
+.navbar {
+  background-color: color(dark-main);
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 5rem;
+  transition: 0.3s;
+  z-index: 10;
+  @media screen and (max-width: $tablet) {
+    left: none;
+    top: 0;
+    width: 100vw;
+    height: 2rem;
+  }
+  &__options {
+    background-color: color(main);
+    @media screen and (max-width: $tablet) {
+      display: flex;
+    }
+    &__item {
+      font-family: $font-main;
+      border-bottom: solid 0.5px transparentize(color(grey-1), 0.6);
+      width: 100%;
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 4px;
+      cursor: pointer;
+      background-color: color(dark-main);
+      transition: 0.5s;
+      &:focus {
+        outline: none;
+      }
+      &:hover:not(.active-item) {
+        background-color: color(grey-1);
+      }
+      &:hover > h2 {
+        visibility: visible;
+      }
+      &:active:not(.active-item) > svg {
+        transform: scale(0.9);
+      }
+      &__icon {
+        display: block;
+        object-fit: none;
+        fill: color(grey-3);
+        width: 50%;
+        height: auto;
+        margin: auto;
+        @media screen and (max-width: $tablet) {
+          height: 2rem;
+          width: auto;
+        }
+      }
+      &__label {
+        font-family: $font-secondary;
+        font-size: 0.6rem;
+        text-align: center;
+        color: color(secondary);
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.inactive-bar {
+  transform: translateX(-4.2rem);
+  @media screen and (max-width: $tablet) {
+    transform: none;
+  }
+}
+
+.active-item {
+  @include btn-active;
+  cursor: default;
+  pointer-events: none;
+  @media screen and (max-width: $tablet) {
+    background: linear-gradient(
+      180deg,
+      color(secondary-dark),
+      color(secondary) 50%,
+      rgba(64, 217, 239, 0) 100%
+    );
+    transform: none;
+  }
+}
+
+.active-sea {
+  @include btn-active;
+  @media screen and (max-width: $tablet) {
+    background: linear-gradient(
+      180deg,
+      color(secondary-dark),
+      color(secondary) 50%,
+      rgba(64, 217, 239, 0) 100%
+    );
+    transform: none;
+  }
+}
+
+// Icons
+.arrow {
+  position: absolute;
+  background-color: transparentize(color(grey-1), 0);
+  top: 50%;
+  left: 100%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+  &__icon {
+    width: 1rem;
+    fill: color(dark-main);
+    display: block;
+    margin: auto;
+  }
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+// DISCOVER BUTTONS
+.discover-buttons {
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  width: 8rem;
+  border-top: solid 2px transparentize(color(grey-1), 0.3);
+  border-right: solid 2px transparentize(color(grey-3), 0.7);
+  border-bottom: solid 2px transparentize(color(grey-3), 0.7);
+  border-left: solid 2px transparentize(color(grey-1), 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+  &:active {
+    border-top: solid 2px transparentize(color(grey-3), 0.7);
+    border-right: solid 2px transparentize(color(grey-1), 0.3);
+    border-bottom: solid 2px transparentize(color(grey-1), 0.3);
+    border-left: solid 2px transparentize(color(grey-3), 0.7);
+  }
+  &:hover {
+    background-color: color(grey-4);
+  }
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    fill: color(grey-1);
+  }
+  &__label {
+    font-family: $font-main;
+    font-weight: 400;
+    color: color(grey-1);
+  }
+}
+
+// CARD
+.card {
+  position: relative;
+  height: 15rem;
+  width: 10rem;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+
+  &__layer {
+    z-index: 2;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+  &__title {
+    font-family: $font-main;
+    font-size: 1.1rem;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    z-index: 3;
+  }
+  &__icon {
+    @include centralized;
+    top: 55%;
+    font-size: 5rem;
+    color: white;
+    opacity: 0.9;
+    z-index: 3;
+  }
+  &--red {
+    background-image: color(gradient-red);
+  }
+  &--green {
+    background-image: color(gradient-green);
+  }
+  &--darkblue {
+    background-image: color(gradient-darkblue);
+  }
+  &--lightblue {
+    background-image: color(gradient-lightblue);
+  }
+  &--yellow {
+    background-image: color(gradient-yellow);
+  }
+  &--orange {
+    background-image: color(gradient-orange);
+  }
+  &--purple {
+    background-image: color(gradient-purple);
+  }
+  &--black {
+    background-image: color(gradient-black);
+  }
+}
+
+// MODAL
+.layer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: transparentize($color: black, $amount: 0.3);
+  z-index: 15;
+}
+
+.modal {
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -300vh);
+  width: 50%;
+  border-radius: 10px;
+  background-color: color(grey-1);
+  overflow: hidden;
+  font-family: $font-secondary;
+  transition: 0.6s;
+  @media screen and (max-width: $tablet) {
+    width: 70%;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 95%;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px black;
+  }
+  &__icon {
+    position: relative;
+    width: 4rem;
+    height: 3rem;
+    padding: 2px;
+    color: white;
+    &2 {
+      @include centralized;
+      font-size: 2rem;
+    }
+  }
+  &__title {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 2px 2px 2px 10px;
+    color: white;
+  }
+  &__description {
+    margin: 10px;
+  }
+  &__complexity {
+    margin: 10px;
+  }
+  &__button {
+    margin: 10px 2rem;
+    padding: 10px;
+    width: 10rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: color(grey-1) !important;
+    font-weight: 500;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+    &__area {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+  }
+  &__close {
+    padding: 6px;
+    width: 6rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &2 {
+      margin: auto;
+      transform: translate(-10px, -10%);
+      text-align: center;
+      width: 2rem;
+      height: 2rem;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 80%;
+      color: white;
+      &:hover {
+        color: color(dark-main);
+      }
+      &:active {
+        transform: scale(0.9) translateX(-10px);
+      }
+    }
+  }
+  &__demonstration {
+    border-top: 1px solid black;
+    min-height: 5rem;
+    padding: 10px;
+    color: white;
+  }
+  &--active {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal--red .modal__header,
+.modal--red .modal__demonstration,
+.modal--red .modal__button {
+  background-image: color(gradient-red);
+}
+.modal--green .modal__header,
+.modal--green .modal__demonstration,
+.modal--green .modal__button {
+  background-image: color(gradient-green);
+}
+.modal--darkblue .modal__header,
+.modal--darkblue .modal__demonstration,
+.modal--darkblue .modal__button {
+  background-image: color(gradient-darkblue);
+}
+.modal--lightblue .modal__header,
+.modal--lightblue .modal__demonstration,
+.modal--lightblue .modal__button {
+  background-image: color(gradient-lightblue);
+}
+.modal--yellow .modal__header,
+.modal--yellow .modal__demonstration,
+.modal--yellow .modal__button {
+  background-image: color(gradient-yellow);
+}
+.modal--orange .modal__header,
+.modal--orange .modal__demonstration,
+.modal--orange .modal__button {
+  background-image: color(gradient-orange);
+}
+.modal--purple .modal__header,
+.modal--purple .modal__demonstration,
+.modal--purple .modal__button {
+  background-image: color(gradient-purple);
+}
+.modal--black .modal__header,
+.modal--black .modal__demonstration,
+.modal--black .modal__button {
+  background-image: color(gradient-black);
+}

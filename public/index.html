@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/api-sea-icon.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/549378180a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>API Sea by Sergie</title>
+  </head>
+  <body>
+    <div id="modal" class="modal">
+      <div id="modalHeader" class="modal__header">
+        <div id="modalIcon" class="modal__icon">
+          <i id="modalIcon2" class="modal__icon2"></i>
+        </div>
+
+        <h2 id="modalTitle" class="modal__title">Title</h2>
+        <div id="modalClose2" class="modal__close2">&times;</div>
+      </div>
+      <p id="modalDescription" class="modal__description">
+        Description. You should not be seeing this
+      </p>
+      <p id="modalComplexity" class="modal__complexity">Complexity</p>
+      <div id="buttonArea" class="modal__button__area">
+        <a
+          href="https://google.com"
+          target="_blank"
+          id="modalUrl"
+          class="modal__button"
+          >Documentation</a
+        >
+
+        <!-- <div id="modalClose" class="modal__close">Close</div> -->
+      </div>
+      <div id="modalDemonstration" class="modal__demonstration">
+        Demonstration: if you can read this, either a bug occurred or you are
+        messing with the site
+      </div>
+    </div>
+
+    <div id="layer" class="layer invisible"></div>
+
+    <div class="container">
+      <nav id="navbar" class="navbar inactive-bar">
+        <!-- <img class="navbar__logo" src="assets/logo.svg" alt="" /> -->
+        <div class="navbar__options">
+          <div id="exploreButton" class="navbar__options__item active-item">
+            <svg viewBox="0 0 10 10" class="navbar__options__item__icon">
+              <use
+                xlink:href="assets/symbol-defs.svg#icon-sailing-boat-water"
+              ></use>
+            </svg>
+            <h2 class="navbar__options__item__label">explore</h2>
+          </div>
+          <div id="myapiButton" class="navbar__options__item">
+            <svg viewBox="0 0 10 10" class="navbar__options__item__icon">
+              <use xlink:href="assets/symbol-defs.svg#icon-map-pin"></use>
+            </svg>
+            <h2 class="navbar__options__item__label">my api's</h2>
+          </div>
+          <div id="aboutButton" class="navbar__options__item">
+            <svg viewBox="0 0 10 10" class="navbar__options__item__icon">
+              <use xlink:href="assets/symbol-defs.svg#icon-map"></use>
+            </svg>
+            <h2 class="navbar__options__item__label">about</h2>
+          </div>
+          <div id="discoverButton" class="navbar__options__item">
+            <svg viewBox="0 0 10 10" class="navbar__options__item__icon">
+              <use xlink:href="assets/symbol-defs.svg#icon-compass"></use>
+            </svg>
+            <h2 class="navbar__options__item__label">discover</h2>
+          </div>
+          <div id="seaButton" class="navbar__options__item">
+            <svg viewBox="0 0 10 10" class="navbar__options__item__icon">
+              <use xlink:href="assets/symbol-defs.svg#icon-binoculars"></use>
+            </svg>
+            <h2 class="navbar__options__item__label">Sea view</h2>
+          </div>
+        </div>
+
+        <div id="arrowButton" class="arrow">
+          <svg viewBox="0 0 10 10" class="arrow__icon">
+            <use
+              id="arrowIcon"
+              xlink:href="assets/symbol-defs.svg#icon-arrow_forward_ios"
+            ></use>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- <div class="animation">s</div> -->
+      <div id="sand" class="title"><h1>API SEA by Sergie</h1></div>
+      <div id="sea" class="invisible">
+        <svg>
+          <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+            <feTurbulence
+              id="sea-filter"
+              numOctaves="3"
+              seed="2"
+              baseFrequency="0.02 0.05"
+            ></feTurbulence>
+            <feDisplacementMap
+              scale="20"
+              in="SourceGraphic"
+            ></feDisplacementMap>
+            <animate
+              xlink:href="#sea-filter"
+              attributeName="baseFrequency"
+              dur="60s"
+              keyTimes="0;0.5;1"
+              values="0.02 0.06;0.04 0.08;0.02 0.06"
+              repeatCount="indefinite"
+            />
+          </filter>
+        </svg>
+      </div>
+      <div class="main-section">
+        <section id="exploreSection">
+          <p class="not-supported">
+            It seems your browser does not support some of the features used
+            here and they may not function properly. For a better experience, it
+            is recommended to update your browser
+          </p>
+          <div id="apiArea" class="api-area"></div>
+        </section>
+        <section id="myapiSection" class="invisible">
+          <h2>Feature coming soon...</h2>
+        </section>
+        <section id="aboutSection" class="invisible">
+          <h2 class="about__heading">What is this?</h2>
+          <p class="about__text">
+            Welcome to API Sea by Sergie, a tool desgined to explore existing
+            API's and see how they can be added to a project.
+          </p>
+          <p class="about__text">
+            Here you will be able to find API's from a variety of sources that
+            may inspire new ideas on how to use them on a personal project. The
+            version on the code hosted on GitHub does not have any API keys that
+            may be needed to use them. You need to visit the official
+            documentation and generate a key for yourself.
+          </p>
+          <p class="about__text">
+            This is an ongoing project being constantly updated. Come back
+            regularly for new exciting features and the latest knowledge on web
+            development!
+          </p>
+          <h2 class="about__heading">How to use the site</h2>
+          <h3 class="about__subheading">Exploring a project</h3>
+          <p class="about__text">
+            Simply select any of the cards on the Explore Menu and see how the
+            API works. A brief description, link to the official documentation,
+            an example of application and additional comments will be displayed.
+            The "complexity of use" provides a general view of how difficult it
+            would be for a beginner to use the API. When the difficulty is
+            "variable", it means the API has several ways to be used, with
+            varying difficulties.
+          </p>
+          <h3 class="about__subheading">Extra features</h3>
+          <p class="about__text">
+            Currently you can enable "Sea view" to change the visual aspect of
+            the page (subject to browser compatibility)
+          </p>
+          <h3 class="about__subheading">More Resources</h3>
+          <p class="about__text">
+            Want to discover more interesting resources for ideas on what you
+            can do on the web? This page is periodically updated with more
+            options for you to explore.
+          </p>
+        </section>
+
+        <section id="discoverSection" class="invisible">
+          <div class="discover-box">
+            <div class="discover-buttons">
+              <a href="https://github.com/Sergie-AGA" target="_blank">
+                <svg viewBox="0 0 10 10" class="discover-buttons__icon">
+                  <use xlink:href="assets/symbol-defs.svg#icon-github"></use>
+                </svg>
+                <p class="discover-buttons__label">GitHub</p>
+              </a>
+            </div>
+
+            <div class="discover-buttons">
+              <a
+                href="https://sergie-aga.github.io/Page_ideas/"
+                target="_blank"
+              >
+                <img
+                  src="assets/Page ideas logo.svg"
+                  alt="Page Ideas logo"
+                  class="discover-buttons__icon"
+                />
+                <p class="discover-buttons__label">Page Ideas</p>
+              </a>
+            </div>
+            <p class="discover-text">More coming soon...</p>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
+        © <span id="currentYear" onload="updateYear()"></span> API Sea by Sergie
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
