@@ -11,5 +11,5 @@
 
 Version history:
 - 1.0 -
-Creation of the layout and core functionality
+Creation of the layout and core functionality.
 API's added: Twitter, Open Weather
