@@ -130,12 +130,25 @@
   padding: 5px;
   border-radius: 10px;
   width: 8rem;
+  height: 8rem;
   border-top: solid 2px transparentize(color(grey-1), 0.3);
   border-right: solid 2px transparentize(color(grey-3), 0.7);
   border-bottom: solid 2px transparentize(color(grey-3), 0.7);
   border-left: solid 2px transparentize(color(grey-1), 0.3);
   cursor: pointer;
   transition: 0.3s;
+  position: relative;
+  @media screen and (max-width: $tablet) {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 5rem;
+    height: 5rem;
+  }
+  &__container {
+    @include centralized;
+  }
   &:active {
     border-top: solid 2px transparentize(color(grey-3), 0.7);
     border-right: solid 2px transparentize(color(grey-1), 0.3);
@@ -147,13 +160,25 @@
   }
   &__icon {
     width: 4rem;
-    height: 4rem;
+
     fill: color(grey-1);
+    @media screen and (max-width: $tablet) {
+      width: 3rem;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 2rem;
+    }
   }
   &__label {
     font-family: $font-main;
     font-weight: 400;
     color: color(grey-1);
+    @media screen and (max-width: $tablet) {
+      font-size: 0.8rem;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: 0.7rem;
+    }
   }
 }
 
@@ -166,7 +191,10 @@
   cursor: pointer;
   overflow: hidden;
   transition: 0.3s;
-
+  @media screen and (max-width: $mobile) {
+    width: 6rem;
+    height: 9rem;
+  }
   &__layer {
     z-index: 2;
   }
@@ -187,6 +215,9 @@
     color: white;
     opacity: 0.9;
     z-index: 3;
+    @media screen and (max-width: $mobile) {
+      font-size: 0.9rem;
+    }
   }
   &__icon {
     @include centralized;
@@ -195,6 +226,9 @@
     color: white;
     opacity: 0.9;
     z-index: 3;
+    @media screen and (max-width: $mobile) {
+      font-size: 3rem;
+    }
   }
   &--red {
     background-image: color(gradient-red);
@@ -335,6 +369,12 @@
   }
   &--active {
     transform: translate(-50%, -50%);
+    @media screen and (max-width: $tablet) {
+      transform: translate(-50%, -30%);
+    }
+    @media screen and (max-width: $mobile) {
+      transform: translate(-50%, -10%);
+    }
   }
 }
 

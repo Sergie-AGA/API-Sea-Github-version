@@ -2,7 +2,6 @@
   height: 100vh;
   width: 100vw;
   z-index: -10;
-  overflow-x: hidden;
 }
 
 @supports (display: flex) and (display: grid) and
@@ -66,6 +65,9 @@
   width: calc(100vw-4rem);
   @include centralized;
   z-index: -5;
+  @media screen and (max-width: $tablet) {
+    width: 100vw;
+  }
 }
 
 .title {
@@ -134,6 +136,7 @@
   height: 100vh;
   position: relative;
   @media screen and (max-width: $tablet) {
+    width: 100vw;
     overflow-y: auto;
   }
   @media screen and (max-width: $mobile) {
@@ -155,6 +158,9 @@
     padding-bottom: 5rem;
     height: auto;
   }
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  }
 }
 
 // ABOUT SECTION
@@ -172,6 +178,7 @@
   }
   @media screen and (max-width: $mobile) {
     width: 90%;
+    margin: auto auto 5rem;
   }
 }
 
@@ -217,6 +224,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .discover-text {
