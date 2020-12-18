@@ -2,7 +2,7 @@
  Aggregator of API's, aimed that showing different API's, practical examples of what they can do and links to the official documentations.
  Currently hosted at: https://api-sea-by-sieger.herokuapp.com/
  
- This project uses a dynamic architecture with Node JS and Express JS handling http requests to each API involved. The styling was made using the SASS (SCSS to be specific), the CSS pre-processor and BEM naming convention along with a variation of the 7-1 CSS architecture.
+ This project uses a dynamic architecture with Node JS and Express JS handling http requests to each API involved. The styling was made using the the CSS pre-processor SASS (SCSS to be specific) and BEM naming convention along with a variation of the 7-1 CSS architecture.
  
  Current version: 1.0
  API's available:
